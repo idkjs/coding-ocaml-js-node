@@ -1,0 +1,11 @@
+{
+    "name": "coding-ocaml-js-node",
+    "sources": {
+      "dir" : "."
+    },
+    "suffix": ".bs.js",
+    "warnings": {
+      "number": "+A-42-48-44-4",
+      "error": "+A-3-102-103"
+    }
+}

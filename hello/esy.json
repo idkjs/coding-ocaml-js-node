@@ -1,0 +1,23 @@
+{
+  "name": "hello",
+  "esy": {
+    "buildsInSource": "_build",
+    "build": "dune build @all"
+  },
+  "scripts": {
+    "watch": "esy b dune build @run_hello_bc -w",
+    "watch-bc": "esy b dune build @run_hello_bc -w",
+    "watch-js": "esy b dune build @run_hello_js -w",
+    "hello-reason": "esy build dune exec node _build/default/HelloReason.bs.js",
+    "hello-rescript": "esy build dune exec node _build/default/HelloRescript.bs.js",
+    "start": "esy b dune exec ./Hello.exe",
+    "start:node": "nodemon _build/default/Hello.bs.js"
+  },
+  "dependencies": {
+    "ocaml": "4.12.x",
+    "melange": "melange-re/melange"
+  },
+  "devDependencies": {
+    "@opam/ocaml-lsp-server": "*"
+  }
+}
