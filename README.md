@@ -76,6 +76,21 @@ esy watch-js
 
 If you see `Tu tu ru~ Mayushii desu!`, that means everything is working and we can now setup VSCode.
 
+Works for `ReasonML`, `Rescript` and `OCaml`
+
+Run `esy hello-reason` and `esy hello-rescript`
+
+```sh
+> esy hello-reason
+
+Hello, Reason!
+
+> esy hello-rescript
+
+Hello, Rescript!
+
+```
+
 ## VSCode
 
 You should go to your VSCode and install the extension "OCaml Platform". That's it, now you can open the example project on VSCode, open the file `Hello.ml` and you should have everything working, autocomplete, types when you hover some identifier and in-editor typechecking.
@@ -99,9 +114,17 @@ Run the following them change `index.js` or create a file and you should see `He
 
 ```sh
 redemon --path=./foo echo "Hello World!"
+Hello World!
+# after a change
+Hello World!
 ```
 
 Or pass `node index.js` as a command and see the output
 ```sh
 redemon --path=./foo node foo/index.js
+hello
+# after editing text
+hello again
 ```
+
+Hope this helps!

@@ -1,1 +1,1 @@
-Js.log("Hello, Rescript!")
+Js.log("Hello, Reason!")
