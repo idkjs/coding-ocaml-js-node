@@ -1,0 +1,98 @@
+rescript = 1
+g_finger := /Users/mando/Github/coding-ocaml-js-node/hello-npm/node_modules/bs-moment/lib/ocaml/install.stamp
+g_finger := /Users/mando/Github/coding-ocaml-js-node/hello-npm/node_modules/ocaml-re/lib/ocaml/install.stamp
+rule astj
+  command = /Users/mando/.fnm/node-versions/v14.16.0/installation/pnpm-global/5/node_modules/.pnpm/rescript@9.1.2/node_modules/rescript/darwin/bsc.exe -w +A-42-48-44-4 -warn-error +A-3-102-103 -bs-v 9.1.2  -absname -bs-ast -o $out $i
+o refmterr/lib/atom.ast : astj ../../refmterr/lib/atom.re
+rule deps
+  command = /Users/mando/.fnm/node-versions/v14.16.0/installation/pnpm-global/5/node_modules/.pnpm/rescript@9.1.2/node_modules/rescript/darwin/bsb_helper.exe -hash 9c17e7c889128c4262796e4d3c4ed46e $in
+  restat = 1
+o refmterr/lib/atom.d : deps refmterr/lib/atom.ast
+rule mij
+  command = /Users/mando/.fnm/node-versions/v14.16.0/installation/pnpm-global/5/node_modules/.pnpm/rescript@9.1.2/node_modules/rescript/darwin/bsc.exe -I . -I refmterr/bin -I refmterr/todo -I refmterr/errs -I refmterr/lib -I refmterr -I /Users/mando/Github/coding-ocaml-js-node/hello-npm/node_modules/bs-moment/lib/ocaml -I /Users/mando/Github/coding-ocaml-js-node/hello-npm/node_modules/ocaml-re/lib/ocaml  -w +A-42-48-44-4 -warn-error +A-3-102-103 -bs-package-name coding-ocaml-js-node -bs-package-output commonjs:lib/js/$in_d:.bs.js -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o refmterr/lib/atom.cmj refmterr/lib/atom.cmi ../js/refmterr/lib/atom.bs.js : mij refmterr/lib/atom.ast
+o refmterr/lib/index.ast : astj ../../refmterr/lib/index.re
+o refmterr/lib/index.d : deps refmterr/lib/index.ast
+o refmterr/lib/index.cmj refmterr/lib/index.cmi ../js/refmterr/lib/index.bs.js : mij refmterr/lib/index.ast
+o refmterr/lib/helpers.ast : astj ../../refmterr/lib/helpers.re
+o refmterr/lib/helpers.d : deps refmterr/lib/helpers.ast
+o refmterr/lib/helpers.cmj refmterr/lib/helpers.cmi ../js/refmterr/lib/helpers.bs.js : mij refmterr/lib/helpers.ast
+o refmterr/lib/printer.ast : astj ../../refmterr/lib/printer.re
+o refmterr/lib/printer.d : deps refmterr/lib/printer.ast
+o refmterr/lib/printer.cmj refmterr/lib/printer.cmi ../js/refmterr/lib/printer.bs.js : mij refmterr/lib/printer.ast
+o refmterr/lib/stylish.ast : astj ../../refmterr/lib/stylish.re
+o refmterr/lib/stylish.d : deps refmterr/lib/stylish.ast
+o refmterr/lib/stylish.cmj refmterr/lib/stylish.cmi ../js/refmterr/lib/stylish.bs.js : mij refmterr/lib/stylish.ast
+o refmterr/lib/reporter.ast : astj ../../refmterr/lib/reporter.re
+o refmterr/lib/reporter.d : deps refmterr/lib/reporter.ast
+o refmterr/lib/reporter.cmj refmterr/lib/reporter.cmi ../js/refmterr/lib/reporter.bs.js : mij refmterr/lib/reporter.ast
+o refmterr/lib/parseError.ast : astj ../../refmterr/lib/parseError.re
+o refmterr/lib/parseError.d : deps refmterr/lib/parseError.ast
+o refmterr/lib/parseError.cmj refmterr/lib/parseError.cmi ../js/refmterr/lib/parseError.bs.js : mij refmterr/lib/parseError.ast
+o refmterr/lib/reportError.ast : astj ../../refmterr/lib/reportError.re
+o refmterr/lib/reportError.d : deps refmterr/lib/reportError.ast
+o refmterr/lib/reportError.cmj refmterr/lib/reportError.cmi ../js/refmterr/lib/reportError.bs.js : mij refmterr/lib/reportError.ast
+o refmterr/lib/parseWarning.ast : astj ../../refmterr/lib/parseWarning.re
+o refmterr/lib/parseWarning.d : deps refmterr/lib/parseWarning.ast
+o refmterr/lib/parseWarning.cmj refmterr/lib/parseWarning.cmi ../js/refmterr/lib/parseWarning.bs.js : mij refmterr/lib/parseWarning.ast
+o refmterr/lib/reportWarning.ast : astj ../../refmterr/lib/reportWarning.re
+o refmterr/lib/reportWarning.d : deps refmterr/lib/reportWarning.ast
+o refmterr/lib/reportWarning.cmj refmterr/lib/reportWarning.cmi ../js/refmterr/lib/reportWarning.bs.js : mij refmterr/lib/reportWarning.ast
+o refmterr/lib/terminalEntry.ast : astj ../../refmterr/lib/terminalEntry.re
+o refmterr/lib/terminalEntry.d : deps refmterr/lib/terminalEntry.ast
+o refmterr/lib/terminalEntry.cmj refmterr/lib/terminalEntry.cmi ../js/refmterr/lib/terminalEntry.bs.js : mij refmterr/lib/terminalEntry.ast
+rule ast
+  command = /Users/mando/.fnm/node-versions/v14.16.0/installation/pnpm-global/5/node_modules/.pnpm/rescript@9.1.2/node_modules/rescript/darwin/bsc.exe -w +A-42-48-44-4 -warn-error +A-3-102-103 -bs-v 9.1.2  -absname -bs-ast -o $out $i
+o refmterr/errs/load_compile.ast : ast ../../refmterr/errs/load_compile.ml
+o refmterr/errs/load_compile.d : deps refmterr/errs/load_compile.ast
+o refmterr/errs/load_compile.cmj refmterr/errs/load_compile.cmi ../js/refmterr/errs/load_compile.bs.js : mij refmterr/errs/load_compile.ast
+o refmterr/errs/string_concat.ast : ast ../../refmterr/errs/string_concat.ml
+o refmterr/errs/string_concat.d : deps refmterr/errs/string_concat.ast
+o refmterr/errs/string_concat.cmj refmterr/errs/string_concat.cmi ../js/refmterr/errs/string_concat.bs.js : mij refmterr/errs/string_concat.ast
+o refmterr/errs/some_no_parens.ast : ast ../../refmterr/errs/some_no_parens.ml
+o refmterr/errs/some_no_parens.d : deps refmterr/errs/some_no_parens.ast
+o refmterr/errs/some_no_parens.cmj refmterr/errs/some_no_parens.cmi ../js/refmterr/errs/some_no_parens.bs.js : mij refmterr/errs/some_no_parens.ast
+o refmterr/errs/func_decl_no_arg.ast : ast ../../refmterr/errs/func_decl_no_arg.ml
+o refmterr/errs/func_decl_no_arg.d : deps refmterr/errs/func_decl_no_arg.ast
+o refmterr/errs/func_decl_no_arg.cmj refmterr/errs/func_decl_no_arg.cmi ../js/refmterr/errs/func_decl_no_arg.bs.js : mij refmterr/errs/func_decl_no_arg.ast
+o refmterr/errs/func_no_arg_call.ast : ast ../../refmterr/errs/func_no_arg_call.ml
+o refmterr/errs/func_no_arg_call.d : deps refmterr/errs/func_no_arg_call.ast
+o refmterr/errs/func_no_arg_call.cmj refmterr/errs/func_no_arg_call.cmi ../js/refmterr/errs/func_no_arg_call.bs.js : mij refmterr/errs/func_no_arg_call.ast
+o refmterr/errs/undefined_global.ast : ast ../../refmterr/errs/undefined_global.ml
+o refmterr/errs/undefined_global.d : deps refmterr/errs/undefined_global.ast
+o refmterr/errs/undefined_global.cmj refmterr/errs/undefined_global.cmi ../js/refmterr/errs/undefined_global.bs.js : mij refmterr/errs/undefined_global.ast
+o refmterr/errs/if_param_not_bool.ast : ast ../../refmterr/errs/if_param_not_bool.ml
+o refmterr/errs/if_param_not_bool.d : deps refmterr/errs/if_param_not_bool.ast
+o refmterr/errs/if_param_not_bool.cmj refmterr/errs/if_param_not_bool.cmi ../js/refmterr/errs/if_param_not_bool.bs.js : mij refmterr/errs/if_param_not_bool.ast
+o refmterr/errs/print_func_parens.ast : ast ../../refmterr/errs/print_func_parens.ml
+o refmterr/errs/print_func_parens.d : deps refmterr/errs/print_func_parens.ast
+o refmterr/errs/print_func_parens.cmj refmterr/errs/print_func_parens.cmi ../js/refmterr/errs/print_func_parens.bs.js : mij refmterr/errs/print_func_parens.ast
+o refmterr/errs/syntax_err_no_semi.ast : ast ../../refmterr/errs/syntax_err_no_semi.ml
+o refmterr/errs/syntax_err_no_semi.d : deps refmterr/errs/syntax_err_no_semi.ast
+o refmterr/errs/syntax_err_no_semi.cmj refmterr/errs/syntax_err_no_semi.cmi ../js/refmterr/errs/syntax_err_no_semi.bs.js : mij refmterr/errs/syntax_err_no_semi.ast
+o refmterr/errs/print_operator_infix.ast : ast ../../refmterr/errs/print_operator_infix.ml
+o refmterr/errs/print_operator_infix.d : deps refmterr/errs/print_operator_infix.ast
+o refmterr/errs/print_operator_infix.cmj refmterr/errs/print_operator_infix.cmi ../js/refmterr/errs/print_operator_infix.bs.js : mij refmterr/errs/print_operator_infix.ast
+o refmterr/errs/let_without_in_in_body.ast : ast ../../refmterr/errs/let_without_in_in_body.ml
+o refmterr/errs/let_without_in_in_body.d : deps refmterr/errs/let_without_in_in_body.ast
+o refmterr/errs/let_without_in_in_body.cmj refmterr/errs/let_without_in_in_body.cmi ../js/refmterr/errs/let_without_in_in_body.bs.js : mij refmterr/errs/let_without_in_in_body.ast
+o refmterr/errs/type_unit_forgot_ignore.ast : ast ../../refmterr/errs/type_unit_forgot_ignore.ml
+o refmterr/errs/type_unit_forgot_ignore.d : deps refmterr/errs/type_unit_forgot_ignore.ast
+o refmterr/errs/type_unit_forgot_ignore.cmj refmterr/errs/type_unit_forgot_ignore.cmi ../js/refmterr/errs/type_unit_forgot_ignore.bs.js : mij refmterr/errs/type_unit_forgot_ignore.ast
+o refmterr/bin/berror.ast : astj ../../refmterr/bin/berror.re
+o refmterr/bin/berror.d : deps refmterr/bin/berror.ast
+o refmterr/bin/berror.cmj refmterr/bin/berror.cmi ../js/refmterr/bin/berror.bs.js : mij refmterr/bin/berror.ast
+o ./Lib.ast : astj ../.././Lib.re
+o ./Lib.d : deps ./Lib.ast
+o ./Lib.cmj ./Lib.cmi ../js/./Lib.bs.js : mij ./Lib.ast
+o ./Hello.ast : ast ../.././Hello.ml
+o ./Hello.d : deps ./Hello.ast
+o ./Hello.cmj ./Hello.cmi ../js/./Hello.bs.js : mij ./Hello.ast
+o ./HelloReason.ast : astj ../.././HelloReason.re
+o ./HelloReason.d : deps ./HelloReason.ast
+o ./HelloReason.cmj ./HelloReason.cmi ../js/./HelloReason.bs.js : mij ./HelloReason.ast
+o ./HelloRescript.ast : astj ../.././HelloRescript.res
+o ./HelloRescript.d : deps ./HelloRescript.ast
+o ./HelloRescript.cmj ./HelloRescript.cmi ../js/./HelloRescript.bs.js : mij ./HelloRescript.ast

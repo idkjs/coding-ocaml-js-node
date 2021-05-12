@@ -1,0 +1,18 @@
+{
+  "name": "hello-npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "esy"
+  },
+  "keywords": [],
+  "author": "Alain Armand",
+  "license": "ISC",
+  "dependencies": {
+    "bs-moment": "^0.6.0",
+    "esy": "*",
+    "moment": "^2.29.1",
+    "ocaml-re": "idkjs/ocaml-re"
+  }
+}

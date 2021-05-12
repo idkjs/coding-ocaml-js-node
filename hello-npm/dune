@@ -1,0 +1,30 @@
+(executable
+ (name Hello)
+ (modes byte native))
+
+(rule
+ (alias run_hello_bc)
+ (deps Hello.bc)
+ (action
+  (run ./Hello.bc)))
+
+(rule
+ (alias run_hello)
+ (deps Hello.exe)
+ (action
+  (run ./Hello.exe)))
+
+(rule
+ (alias run_hello_js)
+ (deps Hello.bs.js)
+ (action
+  (run node ./Hello.bs.js)))
+(rule
+ (alias run_hello_reason)
+ (deps HelloReason.bs.js)
+ (action
+  (run node ./HelloReason.bs.js)))
+
+;;;;{BSB GENERATED: NO EDIT
+(include dune.bsb)
+;;;;BSB GENERATED: NO EDIT}

@@ -1,10 +1,16 @@
 {
   "name": "hello",
-  "esy": { "buildsInSource": "_build", "build": "dune build @all" },
+  "esy": {
+    "buildsInSource": "unsafe",
+    "build": [
+      "ln -sfn #{melange.install} node_modules/bs-platform"
+    ]
+  },
   "scripts": {
     "watch": "esy b dune build @run_hello_bc -w",
     "watch-bc": "esy b dune build @run_hello_bc -w",
     "watch-js": "esy b dune build @run_hello_js -w",
+    "watch-reason": "esy b dune build @run_hello_reason -w",
     "hello-reason":
       "esy build dune exec node _build/default/HelloReason.bs.js",
     "hello-rescript":

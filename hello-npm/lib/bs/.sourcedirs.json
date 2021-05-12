@@ -1,0 +1,1 @@
+{ "dirs" : [ "refmterr" , "refmterr/lib" , "refmterr/errs" , "refmterr/todo" , "refmterr/bin" , "." ] , "pkgs" : [ [ "ocaml-re" , "/Users/mando/Github/coding-ocaml-js-node/hello-npm/node_modules/ocaml-re" ] , [ "bs-moment" , "/Users/mando/Github/coding-ocaml-js-node/hello-npm/node_modules/bs-moment" ] ] , "generated" : [] }

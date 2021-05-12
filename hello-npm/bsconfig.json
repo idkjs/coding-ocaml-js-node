@@ -1,12 +1,12 @@
 {
   "name": "coding-ocaml-js-node",
-  "sources": {
+  "sources": [{
     "dir": "."
-  },
+  }],
   "suffix": ".bs.js",
   "warnings": {
     "number": "+A-42-48-44-4",
     "error": "+A-3-102-103"
   },
-  "bs-dependencies": [ "bs-moment" ]
+  "bs-dependencies": [ "bs-moment","ocaml-re" ]
 }

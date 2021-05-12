@@ -1,6 +1,18 @@
 ;;;;{BSB GENERATED: NO EDIT
 (subdir .
 (rule
+(targets  Lib.ast)
+ (deps (:inputs  Lib.re) )
+(action
+ (run bsc  -w a  -absname -bs-ast -o %{targets} %{inputs}))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
+(targets  Lib.cmj Lib.cmi Lib.cmt Lib.bs.js)
+ (deps (:inputs  Lib.ast)  (:ast_deps Lib.ast ) bsconfig.json)
+(action
+ (progn (dynamic-run bsb_helper -root /Users/mando/Github/coding-ocaml-js-node/hello -cwd . %{ast_deps}) (run bsc -bs-re-out -I .    -w a -bs-package-name coding-ocaml-js-node -bs-package-output commonjs:.:.bs.js -o Lib.cmj %{inputs})))
+(enabled_if (= %{ocaml_version} "4.12.0")) )
+ (rule
 (targets  Hello.ast)
  (deps (:inputs  Hello.ml) )
 (action
@@ -37,7 +49,7 @@
  (progn (dynamic-run bsb_helper -root /Users/mando/Github/coding-ocaml-js-node/hello -cwd . %{ast_deps}) (run bsc -I .    -w a -bs-package-name coding-ocaml-js-node -bs-package-output commonjs:.:.bs.js -o HelloRescript.cmj %{inputs})))
 (enabled_if (= %{ocaml_version} "4.12.0")) )
  
-(alias (name bsb_world)(deps  HelloRescript.bs.js HelloReason.bs.js Hello.bs.js)
+(alias (name bsb_world)(deps  HelloRescript.bs.js HelloReason.bs.js Hello.bs.js Lib.bs.js)
 (enabled_if (= %{ocaml_version} "4.12.0"))))
 
 
