@@ -6,9 +6,9 @@
     "watch-bc": "esy b dune build @run_hello_bc -w",
     "watch-js": "esy b dune build @run_hello_js -w",
     "hello-reason":
-      "esy build dune exec node _build/default/HelloReason.bs.js",
+      "nodemon _build/default/HelloReason.bs.js",
     "hello-rescript":
-      "esy build dune exec node _build/default/HelloRescript.bs.js",
+      "nodemon _build/default/HelloRescript.bs.js",
     "start": "esy b dune exec ./Hello.exe",
     "start:node": "nodemon _build/default/Hello.bs.js"
   },

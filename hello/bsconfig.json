@@ -8,5 +8,5 @@
     "number": "+A-42-48-44-4",
     "error": "+A-3-102-103"
   },
-  "bs-dependencies": [ "bs-moment" ]
+  "bs-dependencies": []
 }
